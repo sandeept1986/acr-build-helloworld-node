@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "sampleakscluster-dac3"
+    labels:
+        app: "sampleakscluster-dac3"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: sampleakscluster9f24-sampleakscluster-dac3.b5f96eb3928940cb8c09.centralindia.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "sampleakscluster-dac3"
+                servicePort: 80
