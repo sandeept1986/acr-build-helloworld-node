@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "sampleakscluster-dac3"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "sampleakscluster-dac3"
+  template:
+    metadata:
+      labels:
+        app: "sampleakscluster-dac3"
+    spec:
+      containers:
+        - name: "sampleakscluster-dac3"
+          image: "sampleacrver.azurecr.io/sampleakscluster"
+          ports:
+          - containerPort: 80
